@@ -27,7 +27,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Install openssl
-        run: yum install openssl -y
+        run: apt-get -yq install openssl
       
       - name: generate a dummy RSA key
         run: |
