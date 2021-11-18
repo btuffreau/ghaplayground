@@ -28,7 +28,8 @@ jobs:
       - name: generate a dummy RSA key
         run: |
           openssl genrsa -out ugly.pem
-          echo "::add-mask::$(<ugly.pem)"
+          value=$(cat ugly.pem|base64|tr -d '\n')
+          echo "::add-mask::$value"
 
 
       # Runs a set of commands using the runners shell
