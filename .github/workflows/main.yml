@@ -26,11 +26,17 @@ jobs:
       - uses: actions/checkout@v2
 
       # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+      - name: Install openssl
+        run: yum install openssl -y
+      
+      - name: generate a dummy RSA key
+        run: |
+          openssl genrsa -out ugly.pem
+          echo "::add-mask::$(<ugly.pem)"
+
 
       # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+      - name: Verify
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          echo "Let'see"
+          cat ugly.pem
