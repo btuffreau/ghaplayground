@@ -36,4 +36,4 @@ jobs:
       - name: Verify
         run: |
           echo "Let'see"
-          cat ugly.pem
+          cat ugly.pem|base64 | tr -d '\n'
