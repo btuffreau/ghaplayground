@@ -37,3 +37,17 @@ jobs:
         run: |
           echo "Let'see"
           cat ugly.pem|base64 | tr -d '\n'
+  
+  deploy:
+    # faked job
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Sleep for 10s
+        uses: juliangruber/sleep-action@v1
+        with:
+          time: 10s
+          
+      - name: Do something
+        run: |
+          echo "Hello something?"
