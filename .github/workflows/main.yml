@@ -37,6 +37,11 @@ jobs:
         run: |
           echo "Let'see"
           cat ugly.pem|base64 | tr -d '\n'
+
+      - uses: int128/datadog-actions-metrics@v1
+        with:
+          datadog-api-key: ${{ secrets.DATADOG_API_KEY }}
+          collect-job-metrics: true
   
   deploy:
     # faked job
