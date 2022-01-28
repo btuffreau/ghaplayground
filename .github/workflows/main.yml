@@ -53,6 +53,7 @@ jobs:
           echo "Hello something?"
 
   send:
+    needs: deploy
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
