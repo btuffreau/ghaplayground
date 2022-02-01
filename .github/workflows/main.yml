@@ -60,4 +60,7 @@ jobs:
         run: |
           echo "Hello I'm working from ${{ github.ref }}"
           echo "And here is my SHA ${{ github.sha }}"
+<<<<<<< HEAD
 
+=======
+>>>>>>> b711f09286e83a6f7fc3e930acf3b658afbebc35
