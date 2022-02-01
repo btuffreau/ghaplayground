@@ -48,7 +48,7 @@ jobs:
     # faked job
     needs: build
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
 
     steps:
       - name: Sleep for 10s
