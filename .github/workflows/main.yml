@@ -58,5 +58,5 @@ jobs:
           
       - name: Do something
         run: |
-          echo "Hello I'm working from ${{ github.env }}"
+          echo "Hello I'm working from ${{ github.ref }}"
           echo "My sha is ${{ github.sha }} !"
