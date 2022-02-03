@@ -26,7 +26,7 @@ jobs:
       - id: datadog-metrics
         uses: scribd/github-action-datadog-reporting@v1
         with:
-          datadog-metric-prefix: 'github.action'
+          datadog-metric-prefix: 'project'
           metrics-type: 'velocity'
           teams: ${{ steps.actorTeams.outputs.teams }}
         env:
