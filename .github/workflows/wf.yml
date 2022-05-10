@@ -34,4 +34,4 @@ jobs:
 
       - name: Run run run
         if: failure()
-        run: "recovering, heh!"
+        run: echo "recovering, heh!"
