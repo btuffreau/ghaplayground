@@ -25,13 +25,13 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - name: generate a dummy RSA key
+      - name: failure step
+        id: borked
         run: false
 
-      # Runs a set of commands using the runners shell
-      - name: Verify
+      - name: check
         run: "won't run since previous step is false"
 
-      - name: Run run run
-        if: failure()
+      - name: Check
+        if: failure() && steps.borked.outcome != 'success'
         run: echo "recovering, heh!"
