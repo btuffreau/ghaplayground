@@ -1,3 +1,4 @@
+name: datadog integration
 on:
   workflow_run:
     workflows:

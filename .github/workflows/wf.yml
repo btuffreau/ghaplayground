@@ -27,7 +27,7 @@ jobs:
 
       - name: failure step
         id: borked
-        run: false
+        run: true
 
       - name: check
         run: "won't run since previous step is false"
