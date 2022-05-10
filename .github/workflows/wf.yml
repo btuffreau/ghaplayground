@@ -32,6 +32,9 @@ jobs:
       - name: dummy
         run: echo "won't run since previous step is false..or maybe it will"
 
+      - name: boom
+        run: false
+
       - name: Check
         if: failure() && steps.borked.outcome != 'success'
         run: echo "recovering, heh!"
