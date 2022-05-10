@@ -29,8 +29,8 @@ jobs:
         id: borked
         run: true
 
-      - name: check
-        run: "won't run since previous step is false"
+      - name: dummy
+        run: echo "won't run since previous step is false..or maybe it will"
 
       - name: Check
         if: failure() && steps.borked.outcome != 'success'
