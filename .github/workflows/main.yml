@@ -1,6 +1,7 @@
 # This is a basic workflow to help you get started with Actions
 
 name: CI
+run-name: CI ${{ inputs.simulation-class || "pull_request" }}
 
 # Controls when the workflow will run
 on:
@@ -12,6 +13,11 @@ on:
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+    inputs:
+      description:
+        description: A useless input
+        default: "testing stuff"
+        required: true
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
