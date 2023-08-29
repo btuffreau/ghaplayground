@@ -1,0 +1,27 @@
+name: Inputs
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "an environment to apply this stuff to"
+        required: true
+        type: choice
+        options:
+        - dev
+        - demo
+        - developer
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: check inputs
+        run: echo "environment=$(echo ${{inputs.environment}}-is-an-env)"
+  
+  check:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: validate inputs
+        run: echo ${{ needs.dispatch.outputs.environment }}
